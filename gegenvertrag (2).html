@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Az. HT 1:1 – Gegenvertrag</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--bg:#fbe3ee;--paper:#fff8fb;--ink:#3a1730;--mute:#7a4a62;--line:#f0bfd3;--stamp:#c2185b;--pink:#e0457b;--pink2:#f9cfe0;--ok:#1f6f4a;--no:#a3321f;--neg:#8a5a00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1020;--paper:#3a1830;--ink:#ffe8f1;--mute:#e0b0c7;--line:#6b2f50;--stamp:#ff7aa8;--pink:#ff6fa5;--pink2:#5a2442;--ok:#5fd09a;--no:#ff8b73;--neg:#f0b95a}}
+:root[data-theme="dark"]{--bg:#2a1020;--paper:#3a1830;--ink:#ffe8f1;--mute:#e0b0c7;--line:#6b2f50;--stamp:#ff7aa8;--pink:#ff6fa5;--pink2:#5a2442;--ok:#5fd09a;--no:#ff8b73;--neg:#f0b95a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+.sheet{max-width:760px;margin:0 auto;padding:28px 22px 60px;background:var(--paper);min-height:100vh;position:relative}
+h1,h2,h3{font-family:"Libre Caslon Text",Georgia,serif;line-height:1.25;margin:0}
+h1{font-size:1.7rem;margin:6px 0 4px}
+h2{font-size:1.2rem;margin:34px 0 8px}
+.meta{color:var(--mute);font-size:.9rem;border-bottom:1px solid var(--line);padding-bottom:12px}
+.sub{color:var(--mute);margin:0 0 18px}
+blockquote{margin:16px 0;padding:2px 0 2px 14px;border-left:3px solid var(--line);color:var(--mute);font-style:italic}
+.score{display:flex;gap:10px;align-items:center;justify-content:center;margin:14px 0;font-family:"Libre Caslon Text",serif}
+.score b{font-size:2.2rem;min-width:2ch;text-align:center}
+.score span{font-size:.9rem;color:var(--mute);font-family:"Source Sans 3",sans-serif}
+.clause{border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin:14px 0}
+.clause[data-s="ja"]{border-color:var(--ok)}.clause[data-s="nein"]{border-color:var(--no)}.clause[data-s="verhandeln"]{border-color:var(--neg)}
+.clause h3{font-size:1.02rem;margin-bottom:6px}
+.clause p{margin:6px 0}
+.note{color:var(--mute);font-size:.92rem}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+button{font:inherit;font-size:.95rem;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid var(--stamp);outline-offset:2px}
+button[aria-pressed="true"].ja{background:var(--ok);color:#fff;border-color:var(--ok)}
+button[aria-pressed="true"].nein{background:var(--no);color:#fff;border-color:var(--no)}
+button[aria-pressed="true"].verhandeln{background:var(--neg);color:#fff;border-color:var(--neg)}
+.sign{margin-top:36px;border-top:2px solid var(--ink);padding-top:18px}
+input{font:inherit;width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);margin:8px 0 12px}
+.go{background:var(--ink);color:var(--paper);border-color:var(--ink);font-weight:600}
+.go:disabled{opacity:.4;cursor:not-allowed}
+#status{color:var(--mute);font-size:.92rem;margin:6px 0}
+.stamp{display:none;position:absolute;right:18px;top:150px;transform:rotate(-12deg);border:4px double var(--stamp);color:var(--stamp);padding:8px 14px;font:700 1.05rem/1.2 "Libre Caslon Text",serif;text-align:center;background:var(--paper);opacity:.95;border-radius:4px}
+.stamp.on{display:block;animation:bam .35s cubic-bezier(.2,1.6,.4,1)}
+@keyframes bam{from{transform:rotate(-12deg) scale(2.2);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:.95}}
+#out{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;font-size:.92rem;display:none}
+@media (prefers-reduced-motion:reduce){.stamp.on{animation:none}}
+@media (max-width:520px){.stamp{top:auto;bottom:210px;right:10px;font-size:.9rem}}
+
+.wrap{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:minmax(0,760px) 250px;gap:18px;align-items:start;padding:0 12px}
+.wrap .sheet{margin:0;max-width:none}
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);margin-top:28px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
+aside h3{font-size:1rem;margin-bottom:12px}
+.sc{margin:0 0 16px}
+.sc .row{display:flex;justify-content:space-between;gap:8px;font-size:.92rem;line-height:1.3}
+.sc .row b{font-family:"Libre Caslon Text",serif;white-space:nowrap}
+.track{height:12px;border-radius:6px;background:var(--bg);border:1px solid var(--line);margin-top:6px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--stamp);transition:width 1.1s ease-out}
+.fill.b{background:var(--neg)}.fill.c{background:var(--mute)}
+aside .fine{font-size:.8rem;color:var(--mute);margin:4px 0 0}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+@media (max-width:980px){.wrap{grid-template-columns:1fr;padding:0;gap:0}aside{position:static;order:-1;margin:0;border-width:0 0 1px;border-radius:0}}
+
+body{background:linear-gradient(180deg,var(--pink2),var(--bg) 320px) fixed,var(--bg)}
+.sheet{border-top:6px solid var(--pink)}
+aside{border-top:6px solid var(--pink)}
+h2{border-bottom:2px dotted var(--pink);padding-bottom:4px}
+h1:before{content:"\2605 ";color:var(--pink)}
+.deco{text-align:center;color:var(--pink);letter-spacing:.6em;font-size:1.1rem;margin:2px 0 0}
+.fill{background:var(--pink)}.fill.b{background:var(--stamp)}
+.go{background:var(--pink);border-color:var(--pink);color:#fff}
+button:not(.go):hover{border-color:var(--pink);background:var(--pink2)}
+blockquote{border-left-color:var(--pink)}
+.clause{background:linear-gradient(135deg,transparent 70%,var(--pink2))}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="sheet">
+<p class="deco" aria-hidden="true">★ ☆ ★ ☆ ★</p>
+<div class="meta">Oberstes Schiedsgericht für HelloTalk-Streitigkeiten · Berufungssenat für Gegenschläge<br>Aktenzeichen: <b>HT 1:1 – 2026/0930-B</b> · Eingang: Heute, mit Verspätung, aber mit Stil</div>
+<h1>Gegenvertrag &amp; bedingte Annahme des Waffenstillstands</h1>
+<p class="sub">in der Sache Emely (Antragsgegnerin, Berufungsführerin) gegen Issa (Antragsteller, Webseiten-Bauer)</p>
+
+<h2>Präambel</h2>
+<p>Die Antragsgegnerin hat das Schriftstück „Az. HT 1:1“ geprüft und stellt fest: Es hat zwar JavaScript, aber keine Argumente. Das Gericht ist beeindruckt von der Technik, nicht vom Inhalt. Ein PDF ist statisch, ja. Es ist dafür ehrlich.</p>
+<blockquote>„Wer die Waffen des Gegners nur kopiert, hat sie nie selbst besessen.“ – Antragsgegnerin, Anlage B1, nicht geliehen</blockquote>
+<p>Jeder Paragraf unten kann <b>angenommen</b>, <b>abgelehnt</b> oder <b>nachverhandelt</b> werden. Wirksam wird der Vertrag erst nach Unterschrift.</p>
+
+<h2>§ 1 Punktestand</h2>
+<div class="score"><div><span>Issa</span><br><b>1</b></div><b>:</b><div><span>Emely</span><br><b>2</b></div></div>
+<p class="note">Runde 3 geht an die Antragsgegnerin: Eine Webseite als Antwort auf ein PDF ist keine neue Waffe, sondern ein Rückzugsgefecht mit Animation.</p>
+<div class="clause" data-id="1" data-t="Punktestand 2:1 für Emely"><h3>Neuer Punktestand: 2 : 1</h3><p>Der Gleichstand wird aufgehoben.</p>
+<div class="btns"></div></div>
+
+<h2>§ 2 Die Entschuldigung</h2>
+<p>Eine Entschuldigung, in der sich der Entschuldigende für die eigene Großartigkeit entschuldigt, ist <b>keine Entschuldigung</b>, sondern Eigenlob mit Schleife.</p>
+<div class="clause" data-id="2" data-t="Entschuldigung ohne Eigenlob, mit mindestens einem Satz „Es tut mir leid“"><h3>Neufassung der Entschuldigung</h3><p>Issa reicht eine Neufassung ein: ohne Eigenlob, mit mindestens einem Satz, der mit „Es tut mir leid“ beginnt.</p>
+<div class="btns"></div></div>
+
+<h2>§ 3 Insider-Regelungen</h2>
+<div class="clause" data-id="3" data-t="Blondie: Titel nur gegen Titel „Hungrig-Hans“ für Issa"><h3>3.1 Blondie-Feststellung</h3><p>Haarfarbe ist kein Beweismittel ersten Ranges, sondern eine Behauptung mit Frisur. Der Titel „Blondie“ wird nur anerkannt, wenn Issa im Gegenzug den Titel <b>„Hungrig-Hans“</b> trägt.</p>
+<div class="btns"></div></div>
+<div class="clause" data-id="4" data-t="Nachtrageverbot abgelehnt, Nachtragen gilt als Qualitätsmerkmal; Ordnungsgeld „ein Kaffee“ ebenfalls abgelehnt"><h3>3.2 Nachtrageverbot</h3><p>Abgelehnt. Nachtragend sein ist kein Mangel, sondern ein Qualitätsmerkmal: Es zeigt, dass jemand zuhört und Dinge behält. Das Ordnungsgeld von einem Kaffee wird ebenfalls <b>abgelehnt</b>: Die Antragsgegnerin trinkt keinen Kaffee, die Strafe wäre eine Zumutung für sie.</p>
+<div class="btns"></div></div>
+<div class="clause" data-id="5" data-t="Vogelscheuche: Nichtigkeit angenommen, Strafe auf 5 Komplimente erhöht (eins ohne Ironie)"><h3>3.3 Vogelscheuche-Klausel</h3><p>Die Nichtigkeit wird dankend angenommen. Der Strafrahmen wird von drei auf <b>fünf ernst gemeinte Komplimente</b> erhöht, davon mindestens eines ganz ohne Ironie.</p>
+<div class="btns"></div></div>
+
+<h2>§ 4 Waffenstillstand</h2>
+<div class="clause" data-id="6" data-t="Waffenruhe bis zur nächsten Nachricht oder bis Issa Hunger hat; Titel „Verrückt“ bleibt als Ehrentitel"><h3>Dauer und Titel</h3><p>Die Waffenruhe gilt bis zur nächsten Nachricht oder bis Issa wieder Hunger hat. Der Titel „Verrückt“ bleibt unberührt, wird aber hiermit zum <b>Ehrentitel</b> erklärt.</p>
+<div class="btns"></div></div>
+
+<h2>§ 5 Kosten</h2>
+<p>Die Kosten trägt laut Kostenregel die Partei, die zuletzt „Du bist so nachtragend“ gesagt hat. Das war Issa.</p>
+<div class="clause" data-id="7" data-only="ja" data-t="Kaffee ist ausdrücklich ausgeschlossen, kein Rechtsmittel"><h3>Kaffee-Ausschluss</h3><p>Die Antragsgegnerin hasst Kaffee. Kaffee ist ausdrücklich ausgeschlossen. Gegen den Beschluss gibt es kein Rechtsmittel.</p>
+<div class="btns"></div></div>
+
+<div class="sign">
+<h3>Unterschrift</h3>
+<p id="status" aria-live="polite"></p>
+<label for="nm">Voller Name der unterzeichnenden Partei</label>
+<input id="nm" autocomplete="off" placeholder="z. B. Emely">
+<button class="go" id="go" disabled>Vertrag in Kraft setzen</button>
+<div class="stamp" id="stamp">BEIDERSEITS<br>ABGEHEFTET<br><small>ohne Kaffee</small></div>
+<pre id="out"></pre>
+<button id="cp" style="display:none;margin-top:10px">Zusammenfassung kopieren</button>
+</div>
+</main>
+<aside aria-label="Gutachten des Senats">
+<h3>Sachverständigen-Gutachten</h3>
+<div class="sc"><div class="row"><span>Emely: Krank (im Sinne von verrückt, aber nicht nur: auch Fieber)</span><b>10/10</b></div><div class="track" role="meter" aria-valuemin="0" aria-valuemax="10" aria-valuenow="10"><div class="fill" data-w="100"></div></div></div>
+<div class="sc"><div class="row"><span>Emely: Tänzerin</span><b>1/10</b></div><div class="track" role="meter" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1"><div class="fill b" data-w="10"></div></div></div>
+<div class="sc"><div class="row"><span>Issa: Musikgeschmack</span><b>3/10</b></div><div class="track" role="meter" aria-valuemin="0" aria-valuemax="10" aria-valuenow="3"><div class="fill c" data-w="30"></div></div></div>
+<p class="fine">Gutachten des 1. Senats, rechtskräftig und nicht anfechtbar.</p>
+</aside></div>
+<script>requestAnimationFrame(function(){document.querySelectorAll(".fill").forEach(function(f){f.style.width=f.dataset.w+"%"})});</script>
+<script>
+(function(){
+var L={ja:"Annehmen",nein:"Ablehnen",verhandeln:"Nachverhandeln"};
+var cl=[].slice.call(document.querySelectorAll(".clause"));
+var st=document.getElementById("status"),nm=document.getElementById("nm"),go=document.getElementById("go");
+cl.forEach(function(c){
+ var b=c.querySelector(".btns");
+ Object.keys(L).filter(function(k){return !c.dataset.only||k===c.dataset.only}).forEach(function(k){
+  var x=document.createElement("button");x.className=k;x.textContent=L[k];x.setAttribute("aria-pressed","false");
+  x.onclick=function(){c.dataset.s=k;[].forEach.call(b.children,function(y){y.setAttribute("aria-pressed",y===x?"true":"false")});upd()};
+  b.appendChild(x)});
+});
+function upd(){
+ var n=cl.filter(function(c){return c.dataset.s}).length;
+ var ok=n===cl.length&&nm.value.trim().length>1;
+ go.disabled=!ok;
+ st.textContent=n<cl.length?(n+" von "+cl.length+" Klauseln entschieden."):(nm.value.trim().length>1?"Alles entschieden. Das Gericht ist bereit.":"Alle Klauseln entschieden. Es fehlt noch der Name.");
+}
+nm.oninput=upd;upd();
+go.onclick=function(){
+ var t="GEGENVERTRAG Az. HT 1:1 – 2026/0930-B\n\n";
+ cl.forEach(function(c,i){t+=(i+1)+". "+c.dataset.t+" → "+L[c.dataset.s].toUpperCase()+"\n"});
+ t+="\nGez. "+nm.value.trim()+", "+new Date().toLocaleDateString("de-DE")+"\nBeiderseits abgeheftet, ohne Kaffee.";
+ var o=document.getElementById("out");o.textContent=t;o.style.display="block";
+ document.getElementById("stamp").classList.add("on");
+ var cp=document.getElementById("cp");cp.style.display="inline-block";
+ cp.onclick=function(){try{navigator.clipboard.writeText(t).then(function(){cp.textContent="Kopiert"})}catch(e){cp.textContent="Kopieren nicht möglich"}};
+ go.disabled=true;
+};
+})();
+</script>
+</body>
+</html>
